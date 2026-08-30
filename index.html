@@ -1,0 +1,398 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mente Sana — Tu espacio de bienestar</title>
+    <meta
+      name="description"
+      content="Mente Sana: recursos, actividades y una comunidad para cuidar tu bienestar emocional."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header class="nav" id="nav">
+      <div class="nav__inner container">
+        <a href="#inicio" class="nav__brand" data-route="inicio">
+          <img
+            src="/imagenes/Logo mente sana.jpeg"
+            alt="Logo Mente Sana"
+            class="nav__brand-mark"
+          />
+          Mente Sana
+        </a>
+        <nav class="nav__links" id="navLinks">
+          <a href="#inicio" class="nav__link" data-route="inicio">Inicio</a>
+          <a
+            href="#sobre-salud-mental"
+            class="nav__link"
+            data-route="sobre-salud-mental"
+            >Sobre la salud mental</a
+          >
+          <a href="#recursos" class="nav__link" data-route="recursos"
+            >Recursos</a
+          >
+          <a href="#actividades" class="nav__link" data-route="actividades"
+            >Actividades</a
+          >
+          <a href="#perfil" class="nav__link protected-link" data-route="perfil"
+            >Mi espacio <span class="lock">🔒</span></a
+          >
+          <button class="nav__cta" id="authButton">Comienza tu camino</button>
+        </nav>
+        <button class="nav__toggle" id="navToggle" aria-label="Abrir menú">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </header>
+
+    <main id="app">
+      <section class="module hero is-active" id="inicio" data-module="inicio">
+        <div class="hero__breath" aria-hidden="true">
+          <span class="hero__ring hero__ring--1"></span
+          ><span class="hero__ring hero__ring--2"></span
+          ><span class="hero__ring hero__ring--3"></span>
+        </div>
+        <div class="container hero__inner">
+          <p class="eyebrow">Bienestar · Equilibrio · Autocuidado</p>
+          <h1 class="hero__title">
+            Una mente sana es el primer paso hacia una vida plena.
+          </h1>
+          <p class="hero__subtitle">
+            Información clara, actividades sencillas y un espacio propio para
+            observar cómo te sientes, avanzar y conectar con una comunidad
+            respetuosa.
+          </p>
+          <div class="hero__actions">
+            <button class="btn btn--primary" data-open-register>
+              Comienza mi camino</button
+            ><a href="#recursos" class="btn btn--ghost" data-route="recursos"
+              >Explorar recursos</a
+            >
+          </div>
+        </div>
+      </section>
+
+      <section
+        class="module section"
+        id="sobre-salud-mental"
+        data-module="sobre-salud-mental"
+      >
+        <div class="container">
+          <p class="eyebrow">Entendiendo el bienestar</p>
+          <h2 class="section__title">¿Qué es la salud mental?</h2>
+          <p class="section__lead">
+            Es el equilibrio que nos permite pensar con claridad, sentir con
+            libertad, relacionarnos de forma sana y afrontar las dificultades
+            cotidianas.
+          </p>
+          <div class="grid grid--4">
+            <article class="card card--hover">
+              <img
+                class="card__icon-img"
+                src="imagenes/salud_emocional.svg"
+                alt="Bienestar emocional"
+              />
+              <h3 class="card__title">Bienestar emocional</h3>
+              <p class="card__text">
+                Reconocer y nombrar lo que sentimos nos ayuda a gestionar
+                nuestras emociones.
+              </p>
+            </article>
+            <article class="card card--hover">
+              <img
+                class="card__icon-img"
+                src="imagenes/salud_mental.svg"
+                alt="Salud psicológica"
+              />
+              <h3 class="card__title">Salud psicológica</h3>
+              <p class="card__text">
+                Observar nuestros pensamientos con curiosidad y sin juzgarnos
+                cambia el día a día.
+              </p>
+            </article>
+            <article class="card card--hover">
+              <img
+                class="card__icon-img"
+                src="imagenes/vinculos.svg"
+                alt="Vínculos saludables"
+              />
+              <h3 class="card__title">Vínculos saludables</h3>
+              <p class="card__text">
+                Contar con personas de apoyo es uno de los pilares del bienestar
+                emocional.
+              </p>
+            </article>
+            <article class="card card--hover">
+              <img
+                class="card__icon-img"
+                src="imagenes/habitos-sanos.svg"
+                alt="Autocuidado"
+              />
+              <h3 class="card__title">Autocuidado</h3>
+              <p class="card__text">
+                Dormir, moverte, alimentarte y darte pausas es una forma básica
+                de respeto propio.
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="module section" id="recursos" data-module="recursos">
+        <div class="container">
+          <p class="eyebrow">Aprende y comparte</p>
+          <h2 class="section__title">Recursos para tu bienestar</h2>
+          <p class="section__lead">
+            Selecciona una categoría para leer sus artículos. Los usuarios
+            registrados pueden participar en los comentarios.
+          </p>
+          <div class="resource-tabs" id="resourceTabs"></div>
+          <div class="articles-grid" id="articlesGrid"></div>
+        </div>
+      </section>
+
+      <section
+        class="module section section--tint"
+        id="actividades"
+        data-module="actividades"
+      >
+        <div class="container">
+          <div class="activity-invite">
+            <div class="activity-invite__content">
+              <p class="eyebrow">Ponlo en práctica</p>
+              <h2 class="section__title">Actividades para tu bienestar</h2>
+              <p class="section__lead">
+                Regístrate para desbloquear tres actividades nuevas cada día. Al
+                completarlas ganarás monedas y recompensas para alimentar,
+                cuidar y personalizar a Mimo.
+              </p>
+              <button class="btn btn--primary" id="activitiesAccessButton">
+                Registrarme y desbloquear actividades
+              </button>
+            </div>
+            <img
+              src="imagenes/Mimo_2D_cuerpo_completo.svg"
+              alt="Mimo te acompaña en tus actividades"
+            />
+          </div>
+        </div>
+      </section>
+
+      <section
+        class="module section protected-module"
+        id="perfil"
+        data-module="perfil"
+      >
+        <div class="container">
+          <div class="profile-header">
+            <div class="profile-avatar" id="profileAvatar">M</div>
+            <div>
+              <p class="eyebrow">Mi espacio</p>
+              <h2 class="section__title" id="profileName">Mi perfil</h2>
+              <p class="public-user" id="publicUsername"></p>
+            </div>
+            <button class="btn btn--ghost btn--small" id="logoutButton">
+              Cerrar sesión
+            </button>
+          </div>
+          <div class="profile-layout">
+            <div class="dashboard">
+              <article class="dashboard__card dashboard__card--wide">
+                <h3 class="dashboard__label">Progreso semanal</h3>
+                <div class="progress-chart" id="progressChart"></div>
+              </article>
+              <article class="dashboard__card">
+                <h3 class="dashboard__label">Actividades</h3>
+                <p class="dashboard__big" id="completedCount">0</p>
+                <p class="dashboard__hint">completadas en total</p>
+              </article>
+              <article class="dashboard__card">
+                <h3 class="dashboard__label">Monedas disponibles</h3>
+                <p class="dashboard__big"><span id="profileCoins">0</span></p>
+              </article>
+            </div>
+            <aside class="mimo-card">
+              <div class="mimo-stage" id="mimo">
+                <img
+                  src="imagenes/Mimo_2D_cuerpo_completo.svg"
+                  alt="Mimo, mascota de Mente Sana"
+                /><span
+                  class="mimo-accessory"
+                  id="mimoAccessory"
+                  aria-hidden="true"
+                ></span>
+              </div>
+              <h3>Mimo</h3>
+              <p id="mimoMessage">¡Hola! Completemos una actividad juntos.</p>
+              <div class="mimo-stats">
+                <span>Hambre <strong id="hungerValue">50%</strong></span>
+                <div class="bar">
+                  <div class="bar__fill" id="hungerBar"></div>
+                </div>
+              </div>
+              <button class="btn btn--primary btn--small" id="shopToggle">
+                Abrir tienda
+              </button>
+              <div class="mimo-shop" id="mimoShop" hidden>
+                <h4>Tienda de Mimo</h4>
+                <div class="shop-grid">
+                  <button class="shop-action" data-item="comida" data-cost="1">
+                    <strong>Alimento</strong><span>1 moneda</span></button
+                  ><button
+                    class="shop-action"
+                    data-item="sombrero"
+                    data-cost="3"
+                  >
+                    <strong>Sombrero</strong><span>3 monedas</span></button
+                  ><button class="shop-action" data-item="planta" data-cost="2">
+                    <strong>Planta</strong><span>2 monedas</span></button
+                  ><button class="shop-action" data-item="lazo" data-cost="4">
+                    <strong>Lazo</strong><span>4 monedas</span>
+                  </button>
+                </div>
+              </div>
+              <div class="inventory" id="inventory"></div>
+            </aside>
+          </div>
+          <section
+            class="profile-activities"
+            aria-labelledby="dailyActivitiesTitle"
+          >
+            <div class="module-heading">
+              <div>
+                <p class="eyebrow">Tu rutina de hoy</p>
+                <h2 class="section__title" id="dailyActivitiesTitle">
+                  Actividades diarias
+                </h2>
+                <p class="section__lead">
+                  Hoy tienes tres actividades desbloqueadas. Completa cada una
+                  para ganar una moneda para Mimo.
+                </p>
+              </div>
+              <div class="coin-pill">
+                Monedas: <strong id="coinCount">0</strong>
+              </div>
+            </div>
+            <div class="activities" id="activitiesGrid"></div>
+          </section>
+          <div class="profile-tools">
+            <article class="card">
+              <h3 class="card__title">📞 Contacto de emergencia</h3>
+              <p class="card__text">
+                Guarda una persona de confianza para tenerla a mano.
+              </p>
+              <form id="emergencyForm" class="stack-form">
+                <input
+                  id="emergencyName"
+                  placeholder="Nombre del contacto"
+                /><input
+                  id="emergencyPhone"
+                  placeholder="Número de teléfono"
+                /><button class="btn btn--primary btn--small">
+                  Guardar contacto
+                </button>
+              </form>
+              <p id="emergencySaved" class="saved-note"></p>
+            </article>
+            <article class="card">
+              <h3 class="card__title">💬 Muro de la comunidad</h3>
+              <form id="wallForm" class="stack-form">
+                <textarea
+                  id="wallMessage"
+                  placeholder="Comparte algo positivo con la comunidad"
+                  maxlength="240"
+                ></textarea
+                ><button class="btn btn--primary btn--small">Publicar</button>
+              </form>
+              <div id="wallPosts" class="comment-list"></div>
+            </article>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <div class="modal" id="registerModal" hidden>
+      <div class="modal__backdrop" data-close-modal></div>
+      <div class="modal__box register-box" role="dialog" aria-modal="true">
+        <button class="modal__close" data-close-modal>✕</button>
+        <p class="eyebrow">Crea tu espacio</p>
+        <h2>Comienza tu camino</h2>
+        <p>Tu username será visible en comentarios y en el muro.</p>
+        <form id="registerForm" class="stack-form">
+          <label
+            >Nombre<input
+              id="registerName"
+              required
+              maxlength="60"
+              placeholder="Tu nombre" /></label
+          ><label
+            >Correo o teléfono<input
+              id="registerContact"
+              required
+              maxlength="80"
+              placeholder="correo@ejemplo.com o +505..." /></label
+          ><label
+            >Username público<input
+              id="registerUsername"
+              required
+              maxlength="24"
+              pattern="[A-Za-z0-9_.-]{3,24}"
+              placeholder="@tu_usuario"
+          /></label>
+          <p class="form-error" id="registerError"></p>
+          <button class="btn btn--primary">Crear mi cuenta</button>
+        </form>
+      </div>
+    </div>
+
+    <div class="modal" id="articleModal" hidden>
+      <div class="modal__backdrop" data-close-article></div>
+      <div class="modal__box article-modal" role="dialog" aria-modal="true">
+        <button class="modal__close" data-close-article>✕</button>
+        <p class="eyebrow" id="articleCategory"></p>
+        <h2 id="articleTitle"></h2>
+        <div class="article-content" id="articleContent"></div>
+        <div class="article-comments">
+          <h3>Comentarios</h3>
+          <form id="commentForm" class="stack-form">
+            <textarea
+              id="commentText"
+              maxlength="300"
+              placeholder="Inicia sesión para comentar"
+            ></textarea
+            ><button class="btn btn--primary btn--small">
+              Publicar comentario
+            </button>
+          </form>
+          <div id="articleCommentList" class="comment-list"></div>
+        </div>
+      </div>
+    </div>
+
+    <footer class="footer">
+      <div class="container footer__inner">
+        <div>
+          <p class="footer__brand">Mente Sana</p>
+          <p class="footer__tagline">
+            Tu bienestar importa. Da pequeños pasos cada día.
+          </p>
+        </div>
+        <nav class="footer__links">
+          <a href="#inicio" data-route="inicio">Inicio</a
+          ><a href="#recursos" data-route="recursos">Recursos</a
+          ><a href="#actividades" data-route="actividades">Actividades</a>
+        </nav>
+      </div>
+      <p class="footer__rights">
+        © 2026 Mente Sana. Prototipo educativo con almacenamiento local.
+      </p>
+    </footer>
+    <script src="script.js"></script>
+  </body>
+</html>
