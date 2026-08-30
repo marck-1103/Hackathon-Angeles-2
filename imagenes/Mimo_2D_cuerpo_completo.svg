@@ -1,0 +1,434 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   width="1200"
+   height="1200"
+   viewBox="0 0 1200 1200"
+   version="1.1"
+   id="svg27"
+   sodipodi:docname="Mimo_2D_Vector_Inkscape.svg"
+   inkscape:version="1.4.4 (dcaf3e7, 2026-05-05)"
+   inkscape:export-filename="Mimo_2D_Vector_Inkscape.svg"
+   inkscape:export-xdpi="96"
+   inkscape:export-ydpi="96"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview27"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:zoom="0.6725"
+     inkscape:cx="600"
+     inkscape:cy="588.10409"
+     inkscape:window-width="1920"
+     inkscape:window-height="1009"
+     inkscape:window-x="-8"
+     inkscape:window-y="-8"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="mimo-head">
+    <inkscape:page
+       x="0"
+       y="0"
+       width="1200"
+       height="1200"
+       id="page2"
+       margin="0"
+       bleed="0" />
+  </sodipodi:namedview>
+  <title
+     id="title1">Mimo - Mascota 2D vectorial</title>
+  <desc
+     id="desc1">Osito Mimo, mascota de bienestar mental. Vector SVG editable en Inkscape.</desc>
+  <!-- Paleta Menta:
+       Verde profundo #315C52
+       Verde salvia  #A8C3B0
+       Crema         #F7F4ED
+       Lavanda       #C9C3DD
+       Amarillo      #F3D98B
+       Texto         #263330
+  -->
+  <defs
+     id="defs3">
+    <filter
+       id="shadow"
+       x="-0.062078555"
+       y="-0.056772062"
+       width="1.1241571"
+       height="1.1414583">
+      <feGaussianBlur
+         in="SourceAlpha"
+         stdDeviation="10"
+         id="feGaussianBlur1" />
+      <feOffset
+         dx="0"
+         dy="12"
+         result="offsetblur"
+         id="feOffset1" />
+      <feComponentTransfer
+         id="feComponentTransfer1">
+        <feFuncA
+           type="linear"
+           slope="0.16"
+           id="feFuncA1" />
+      </feComponentTransfer>
+      <feMerge
+         id="feMerge2">
+        <feMergeNode
+           id="feMergeNode1" />
+        <feMergeNode
+           in="SourceGraphic"
+           id="feMergeNode2" />
+      </feMerge>
+    </filter>
+    <linearGradient
+       id="bodyGradient"
+       x1="0"
+       y1="0"
+       x2="1"
+       y2="1">
+      <stop
+         offset="0%"
+         stop-color="#BBD2BF"
+         id="stop2" />
+      <stop
+         offset="100%"
+         stop-color="#A8C3B0"
+         id="stop3" />
+    </linearGradient>
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#bodyGradient"
+       id="linearGradient27"
+       x1="329.00906"
+       y1="181.78421"
+       x2="859.21301"
+       y2="711.98816"
+       gradientTransform="scale(1.0099123,0.99018503)"
+       gradientUnits="userSpaceOnUse" />
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#bodyGradient"
+       id="linearGradient28"
+       x1="381.83765"
+       y1="490.26071"
+       x2="890.95453"
+       y2="999.37756"
+       gradientTransform="matrix(0.86626758,0,0,0.74028121,40.532248,319.66529)"
+       gradientUnits="userSpaceOnUse" />
+  </defs>
+  <!-- Ground shadow -->
+  <!-- BODY -->
+  <g
+     id="mimo-body"
+     filter="url(#shadow)">
+    <!-- body -->
+    <path
+       d="m 375.89992,773.32876 c 0,-55.8355 59.72301,-87.24298 215.92165,-87.24298 156.19863,0 215.92164,31.40748 215.92164,87.24298 v 181.46539 c 0,66.30465 -78.09932,101.20185 -215.92164,101.20185 -137.82234,0 -215.92165,-34.8972 -215.92165,-101.20185 z"
+       fill="url(#bodyGradient)"
+       stroke="#315c52"
+       stroke-width="8.008"
+       stroke-linejoin="round"
+       id="path3"
+       style="display:inline;fill:url(#linearGradient28)" />
+    <!-- belly -->
+    <ellipse
+       cx="600"
+       cy="790"
+       rx="142"
+       ry="175"
+       fill="#f7f4ed"
+       stroke="#315c52"
+       stroke-width="7"
+       id="ellipse4"
+       style="display:inline" />
+    <!-- left arm -->
+    <path
+       d="m 437.58364,684.05204 c -60,30 -85,115 -65,180 12,40 45,53 73,30 25,-21 18,-56 9,-86 -11,-37 13,-72 40,-92 z"
+       fill="#a8c3b0"
+       stroke="#315c52"
+       stroke-width="10"
+       stroke-linejoin="round"
+       id="path4"
+       style="display:inline" />
+    <!-- right arm -->
+    <path
+       d="m 762.41636,678.10409 c 60,30 85,115 65,180 -12,40 -45,53 -73,30 -25,-21 -18,-56 -9,-86 11,-37 -13,-72 -40,-92 z"
+       fill="#a8c3b0"
+       stroke="#315c52"
+       stroke-width="10"
+       stroke-linejoin="round"
+       id="path5"
+       style="display:inline" />
+    <!-- left leg -->
+    <path
+       d="m 439.86989,964.60967 c -20,45.00003 -5,110.00003 55,130.00003 45,15 85,-7 77,-42 -7,-31 -47,-50 -57,-88.00003 z"
+       fill="#a8c3b0"
+       stroke="#315c52"
+       stroke-width="10"
+       id="path6"
+       style="display:inline" />
+    <!-- right leg -->
+    <path
+       d="m 685.13011,963.12268 c -10,38.00002 -50,57.00002 -57,88.00002 -8,35 32,57 77,42 60,-20 75,-85 55,-130.00002 z"
+       fill="#a8c3b0"
+       stroke="#315c52"
+       stroke-width="10"
+       id="path7"
+       style="display:inline" />
+    <!-- paws -->
+    <ellipse
+       cx="524.58362"
+       cy="1064.5835"
+       rx="42"
+       ry="28"
+       fill="#c9dcca"
+       id="ellipse7"
+       style="display:inline" />
+    <ellipse
+       cx="673.92938"
+       cy="1063.0966"
+       rx="42"
+       ry="28"
+       fill="#c9dcca"
+       id="ellipse8"
+       inkscape:transform-center-x="-56.505576"
+       inkscape:transform-center-y="-8.9219331"
+       style="display:inline" />
+  </g>
+  <!-- HEAD -->
+  <g
+     id="mimo-head"
+     filter="url(#shadow)"
+     transform="matrix(0.98453772,0,0,0.98383125,10.02086,13.61635)"
+     style="display:inline;stroke-width:0.999813;stroke-dasharray:none">
+    <!-- ears -->
+    <circle
+       cx="390"
+       cy="355"
+       r="95"
+       fill="#a8c3b0"
+       stroke="#315c52"
+       stroke-width="10"
+       id="circle8"
+       style="display:inline;stroke-width:0.999813;stroke-dasharray:none" />
+    <circle
+       cx="822.08276"
+       cy="359.53427"
+       r="95"
+       fill="#a8c3b0"
+       stroke="#315c52"
+       stroke-width="10"
+       id="circle9"
+       style="display:inline;stroke-width:0.999813;stroke-dasharray:none" />
+    <ellipse
+       cx="380.18277"
+       cy="342.15286"
+       fill="#f4b9b1"
+       opacity="0.9"
+       id="circle10"
+       style="stroke-width:1.2055;stroke-dasharray:none"
+       rx="64.817223"
+       ry="67.84713" />
+    <ellipse
+       cx="825.85858"
+       cy="346.68716"
+       fill="#f4b9b1"
+       opacity="0.9"
+       id="circle11"
+       style="display:inline;stroke-width:1.21758;stroke-dasharray:none"
+       rx="70.858589"
+       ry="63.312847" />
+    <!-- head -->
+    <path
+       d="M 600,185 C 410,185 320,300 340,475 360,635 465,700 600,700 735,700 840,635 860,475 880,300 790,185 600,185 Z"
+       fill="url(#bodyGradient)"
+       stroke="#315c52"
+       stroke-width="10"
+       stroke-linejoin="round"
+       id="path11"
+       style="display:inline;fill:url(#linearGradient27);stroke-width:0.999813;stroke-dasharray:none" />
+    <!-- subtle face highlight -->
+    <ellipse
+       cx="525"
+       cy="300"
+       rx="95"
+       ry="55"
+       fill="#f7f4ed"
+       opacity="0.2"
+       id="ellipse11"
+       style="display:none;stroke-width:0.999813;stroke-dasharray:none" />
+    <!-- muzzle -->
+    <ellipse
+       cx="600"
+       cy="485"
+       rx="120"
+       ry="92"
+       fill="#f7f4ed"
+       stroke="#315c52"
+       stroke-width="7"
+       id="ellipse12"
+       style="display:inline;stroke-width:0.999813;stroke-dasharray:none" />
+    <!-- eyes -->
+    <ellipse
+       cx="495"
+       cy="425"
+       rx="35"
+       ry="45"
+       fill="#263330"
+       id="ellipse13"
+       style="display:inline;stroke-width:0.999813;stroke-dasharray:none" />
+    <ellipse
+       cx="705"
+       cy="425"
+       rx="35"
+       ry="45"
+       fill="#263330"
+       id="ellipse14"
+       style="display:inline;stroke-width:0.999813;stroke-dasharray:none" />
+    <circle
+       cx="484"
+       cy="410"
+       r="11"
+       fill="#ffffff"
+       id="circle14"
+       style="display:inline;stroke-width:0.999813;stroke-dasharray:none" />
+    <circle
+       cx="694"
+       cy="410"
+       r="11"
+       fill="#ffffff"
+       id="circle15"
+       style="display:inline;stroke-width:0.999813;stroke-dasharray:none" />
+    <!-- cheeks -->
+    <ellipse
+       cx="430"
+       cy="505"
+       rx="43"
+       ry="25"
+       fill="#f3afa8"
+       opacity="0.75"
+       id="ellipse15"
+       style="display:inline;stroke-width:0.999813;stroke-dasharray:none" />
+    <ellipse
+       cx="770"
+       cy="505"
+       rx="43"
+       ry="25"
+       fill="#f3afa8"
+       opacity="0.75"
+       id="ellipse16"
+       style="display:inline;stroke-width:0.999813;stroke-dasharray:none" />
+    <!-- nose -->
+    <ellipse
+       cx="600"
+       cy="470"
+       rx="27"
+       ry="19"
+       fill="#263330"
+       id="ellipse17"
+       style="display:inline;stroke-width:0.999813;stroke-dasharray:none" />
+    <!-- smile -->
+    <path
+       d="m 600,485 c 0,30 -30,40 -50,25 m 50,-25 c 0,30 30,40 50,25"
+       fill="none"
+       stroke="#263330"
+       stroke-width="9"
+       stroke-linecap="round"
+       id="path17"
+       style="display:inline;stroke-width:0.999813;stroke-dasharray:none" />
+    <!-- little leaf stem -->
+    <path
+       d="m 600,190 4.53102,-60.7029"
+       fill="none"
+       stroke="#315c52"
+       stroke-width="12"
+       stroke-linecap="round"
+       id="path18"
+       style="display:inline;stroke-width:0.999813;stroke-dasharray:none"
+       sodipodi:nodetypes="cc" />
+    <!-- sprout -->
+    <path
+       d="m 603.02068,140.57999 c -55,-10 -95.57239,-34.39716 -75.57239,-87.557137 40,-2 80.57239,32.557134 75.57239,87.557137 z"
+       fill="#a8c3b0"
+       stroke="#315c52"
+       stroke-width="8"
+       id="path19"
+       style="display:inline;stroke-width:0.999813;stroke-dasharray:none"
+       sodipodi:nodetypes="ccc" />
+    <path
+       d="m 604.66849,127.69524 c 28.53594,-64.422629 61.77652,-101.886538 101.72683,-72.25213 -5.70719,51.5381 -27.5334,104.46344 -101.72683,72.25213 z"
+       fill="#7faf87"
+       stroke="#315c52"
+       stroke-width="8"
+       id="path20"
+       style="display:inline;stroke-width:1.21249;stroke-dasharray:none"
+       sodipodi:nodetypes="ccc" />
+  </g>
+  <!-- BANDANA -->
+  <g
+     id="mimo-bandana"
+     transform="matrix(0.91910167,0,0,0.82241864,47.052009,147.56604)"
+     style="display:inline">
+    <path
+       d="m 403.38213,603.30318 c 75,50 115,65 195,67 80,-2 120,-17 195,-67 l -25,110 c -80,35 -260,35 -340,0 z"
+       fill="#315c52"
+       stroke="#263330"
+       stroke-width="9"
+       stroke-linejoin="round"
+       id="path21"
+       style="display:inline" />
+    <!-- bandana fold -->
+    <path
+       d="m 555,690 45,80 45,-80"
+       fill="#284c44"
+       stroke="#263330"
+       stroke-width="7"
+       stroke-linejoin="round"
+       id="path22"
+       style="display:none" />
+    <!-- heart -->
+    <path
+       d="m 599.19106,689.85147 c -9.31949,-15.67701 -26.92298,-6.81608 -26.92298,12.26898 0,18.40344 26.92298,29.9908 26.92298,29.9908 0,0 26.92299,-11.58736 26.92299,-29.9908 0,-19.08506 -17.60349,-27.94599 -26.92299,-12.26898 z"
+       fill="#f7f4ed"
+       id="path23"
+       style="display:inline;stroke-width:0.594057" />
+  </g>
+  <!-- LEFT PAW raised -->
+  <g
+     id="mimo-raised-paw"
+     style="display:none">
+    <path
+       d="m 325,760 c -55,-25 -73,-80 -45,-115 27,-35 73,-20 92,15 20,36 5,85 -22,112 z"
+       fill="#a8c3b0"
+       stroke="#315c52"
+       stroke-width="10"
+       id="path24" />
+    <circle
+       cx="310"
+       cy="670"
+       r="10"
+       fill="#f7f4ed"
+       id="circle24" />
+    <circle
+       cx="333"
+       cy="652"
+       r="10"
+       fill="#f7f4ed"
+       id="circle25" />
+    <circle
+       cx="354"
+       cy="666"
+       r="10"
+       fill="#f7f4ed"
+       id="circle26" />
+  </g>
+  <!-- Decorative leaves -->
+  <!-- Metadata text, unobtrusive -->
+</svg>
