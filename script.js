@@ -39,9 +39,12 @@
   function getState() {
     try {
       const raw = localStorage.getItem(STORAGE_KEY);
+          // Si no existe información guardada, devuelve el estado inicial. 
       if (!raw) return clone(defaultState);
+          // Combina los valores guardados con los valores por defecto
       return Object.assign(clone(defaultState), JSON.parse(raw));
     } catch (e) {
+          // Si los datos están dañados o LocalStorage no está disponible,
       return clone(defaultState);
     }
   }
@@ -68,13 +71,15 @@
   function logActivity(key) {
     const state = getState();
     const today = todayKey();
+  // Evita contar dos veces la misma actividad durante el mismo día.
 
     if (!state.activitiesDates[today]) state.activitiesDates[today] = [];
     if (!state.activitiesDates[today].includes(key)) {
       state.activitiesDates[today].push(key);
       state.totalActivitiesCount += 1;
     }
-
+ // Actualiza la racha únicamente cuando el usuario realiza
+  // una actividad por primera vez durante el día.
     if (state.lastActiveDate !== today) {
       const yesterday = new Date();
       yesterday.setDate(yesterday.getDate() - 1);
@@ -134,7 +139,7 @@
      el chatbot registra una actividad, sin acoplar ambos módulos. */
 
   const listeners = {};
-
+// Registra funciones que serán notificadas cuando ocurra un evento.
   function on(eventName, callback) {
     if (!listeners[eventName]) listeners[eventName] = [];
     listeners[eventName].push(callback);
@@ -309,7 +314,7 @@
   function time(){return new Date().toLocaleTimeString('es',{hour:'2-digit',minute:'2-digit'})}
   function append(role,text){const w=document.createElement('div');w.className='msg '+(role==='user'?'msg--user':'msg--bot');w.innerHTML=`${role==='user'?'':'<div class="msg__avatar"><img src="imagenes/Mimo_2D_cabeza.svg" alt="Mimo"></div>'}<div><div class="msg__bubble"></div><span class="msg__time">${time()}</span></div>`;w.querySelector('.msg__bubble').textContent=text;body.appendChild(w);body.scrollTop=body.scrollHeight}
   function remember(role,content){history.push({role,content});history=history.slice(-30);Storage.saveChatHistory(history)}
-  function choose(list){return list[Math.floor(Math.random()*list.length)]}
+  function choose(list){return list[Math.floor(Math.random()*list.length)]} // Selecciona aleatoriamente una respuesta para evitar repeticiones exactas y dar sensación de conversación más natural.
   function classify(text){return intents.find(i=>i.test.test(text))||generic}
   function send(text){const value=(text||'').trim();if(!value)return;append('user',value);remember('user',value);input.value='';setTimeout(()=>{
     let reply;if(CRISIS.test(value)){reply='Siento mucho que estés pasando por algo tan intenso. Tu seguridad es lo más importante. Contacta ahora a emergencias de tu zona o a una persona de confianza y no te quedes a solas. ¿Estás en un lugar seguro?';lastIntent=generic}
