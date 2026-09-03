@@ -5,7 +5,7 @@ Proyecto desarrollado para la actividad de control de versiones con Git y GitHub
 
 > "Una mente sana es el primer paso hacia una vida plena."
 
-## ✨ Características
+## Características
 
 - **Inicio** — Presentación del propósito del sitio y acceso rápido a los recursos.
 - **Sobre la salud mental** — Contenido educativo sobre bienestar emocional.
@@ -21,30 +21,29 @@ Proyecto desarrollado para la actividad de control de versiones con Git y GitHub
 
 ## Tecnologías
 
-| Tecnología | Uso |
-|---|---|
-| HTML5 | Estructura y contenido semántico |
-| CSS3  | Estilos, diseño responsivo y animaciones |
-| JavaScript (Vanilla) | Lógica de la aplicación, ruteo por hash y estado |
-| `localStorage` | Persistencia del estado del usuario, progreso y chat (capa de datos en `storage.js`, pensada para poder reemplazarse por una base de datos real sin tocar el resto del código) |
-| Google Fonts | Tipografías Poppins e Inter |
+| Tecnología           | Uso                                                                                                                                                                            |
+| -------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| HTML5                | Estructura y contenido semántico                                                                                                                                               |
+| CSS3                 | Estilos, diseño responsivo y animaciones                                                                                                                                       |
+| JavaScript (Vanilla) | Lógica de la aplicación, ruteo por hash y estado                                                                                                                               |
+| `localStorage`       | Persistencia del estado del usuario, progreso y chat (capa de datos en `storage.js`, pensada para poder reemplazarse por una base de datos real sin tocar el resto del código) |
+| Google Fonts         | Tipografías Poppins e Inter                                                                                                                                                    |
 
 ## Estructura del proyecto
 
 entre la estructura del proyecto tenemos:
 mente-sana/
-├── index.html          # Estructura principal y todos los módulos (SPA por hash routing)
-├── style.css           # Estilos generales
-├── script.js           # Lógica: estado, rutas, artículos, actividades, perfil y chatbot
+├── index.html # Estructura principal y todos los módulos (SPA por hash routing)
+├── style.css # Estilos generales
+├── script.js # Lógica: estado, rutas, artículos, actividades, perfil y chatbot
 └── imagenes/
-    ├── Logo mente sana.jpeg
-    ├── Mimo_2D_cabeza.svg
-    ├── Mimo_2D_cuerpo_completo.svg
-    ├── habitos-sanos.svg
-    ├── salud_emocional.svg
-    ├── salud_mental.svg
-    └── vinculos.svg
-
+├── Logo mente sana.jpeg
+├── Mimo_2D_cabeza.svg
+├── Mimo_2D_cuerpo_completo.svg
+├── habitos-sanos.svg
+├── salud_emocional.svg
+├── salud_mental.svg
+└── vinculos.svg
 
 ## Próximos pasos a implementar
 
