@@ -1563,9 +1563,7 @@ h4 {
   margin-top: 24px;
 }
 /* =====================================================
-   MENTE SANA — chatbot.css
    Botón flotante + ventana de conversación de Mente Sana AI.
-   Reutiliza las variables de color definidas en styles.css.
    ===================================================== */
 
 /* ---------- Botón flotante ---------- */
@@ -2034,7 +2032,7 @@ h4 {
   transform: translateY(-1px);
 }
 
-/* ---------- Ejercicio de respiración embebido en el chat ---------- */
+/* ---------- Ejercicio de respiración en el chat ---------- */
 .chat-breathing {
   background: var(--white);
   border-radius: var(--radius-s);
@@ -2160,4 +2158,89 @@ h4 {
   display: flex;
   gap: 10px;
   justify-content: center;
+}
+
+
+/* ---------- Accesibilidad y controles de idioma ---------- */
+.skip-link {
+  position: fixed;
+  top: -100px;
+  left: 16px;
+  z-index: 1000;
+  padding: 12px 16px;
+  background: var(--ink);
+  color: #fff;
+  border-radius: 8px;
+  font-weight: 700;
+}
+.skip-link:focus { top: 16px; }
+.sr-only {
+  position: absolute !important;
+  width: 1px !important;
+  height: 1px !important;
+  padding: 0 !important;
+  margin: -1px !important;
+  overflow: hidden !important;
+  clip: rect(0, 0, 0, 0) !important;
+  white-space: nowrap !important;
+  border: 0 !important;
+}
+.language-control {
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+  top: auto;
+  right: auto;
+  z-index: 500;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 7px 10px;
+  border-radius: 999px;
+  background: var(--white);
+  box-shadow: var(--shadow-card);
+}
+.language-control label { font-size: .78rem; font-weight: 600; }
+.language-control select {
+  border: 1px solid var(--green-pale);
+  border-radius: 999px;
+  padding: 6px 9px;
+  background: var(--cream);
+  color: var(--ink);
+  font: inherit;
+}
+.feature-icon {
+  width: 28px;
+  height: 28px;
+  object-fit: contain;
+  vertical-align: middle;
+  margin-right: 8px;
+}
+:focus-visible {
+  outline: 3px solid #8a6914;
+  outline-offset: 3px;
+}
+@media (max-width: 620px) {
+  .language-control {
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+  top: auto;
+  right: auto;
+  z-index: 500;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 7px 10px;
+  border-radius: 999px;
+  background: var(--white);
+  box-shadow: var(--shadow-card);
+}
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    scroll-behavior: auto !important;
+    animation-duration: .01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: .01ms !important;
+  }
 }
