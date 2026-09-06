@@ -4,11 +4,6 @@
    (progress.js) como el chatbot (chatbot.js) leen y
    escriben el estado a través de este módulo, para que
    ambos compartan siempre los mismos datos.
-
-   Diseñado para poder reemplazarse en el futuro por
-   llamadas a una base de datos real sin cambiar la forma
-   en la que el resto del código lo consume: basta con
-   reimplementar las funciones de este archivo.
    ===================================================== */
 
 (function (window) {
@@ -18,12 +13,12 @@
   const CHAT_HISTORY_KEY = 'menteSanaChatHistory';
 
   const defaultState = {
-    moodLog: {},           // { 'YYYY-MM-DD': 'excelente' }
-    activitiesDates: {},   // { 'YYYY-MM-DD': ['respiracion', 'gratitud', ...] }
+    moodLog: {},           
+    activitiesDates: {},   
     streak: 0,
     lastActiveDate: null,
     totalActivitiesCount: 0,
-    badgesUnlocked: []     // ['paso', 'primera-conversacion', ...]
+    badgesUnlocked: []     
   };
 
   function clone(obj) {
@@ -39,12 +34,9 @@
   function getState() {
     try {
       const raw = localStorage.getItem(STORAGE_KEY);
-          // Si no existe información guardada, devuelve el estado inicial. 
       if (!raw) return clone(defaultState);
-          // Combina los valores guardados con los valores por defecto
       return Object.assign(clone(defaultState), JSON.parse(raw));
     } catch (e) {
-          // Si los datos están dañados o LocalStorage no está disponible,
       return clone(defaultState);
     }
   }
@@ -53,8 +45,7 @@
     try {
       localStorage.setItem(STORAGE_KEY, JSON.stringify(state));
     } catch (e) {
-      /* almacenamiento no disponible (modo privado, cuota llena, etc.):
-         la sesión sigue funcionando, simplemente sin persistencia. */
+
     }
     emit('state:changed', state);
   }
@@ -65,21 +56,17 @@
     return fresh;
   }
 
-  /* Registra una actividad completada hoy (respiracion, gratitud,
-     pausa, reto, animo, chat-conversacion, chat-ejercicio, etc.)
-     y actualiza la racha de días consecutivos. */
+  /* Registra una actividad completada  */
   function logActivity(key) {
     const state = getState();
     const today = todayKey();
-  // Evita contar dos veces la misma actividad durante el mismo día.
 
     if (!state.activitiesDates[today]) state.activitiesDates[today] = [];
     if (!state.activitiesDates[today].includes(key)) {
       state.activitiesDates[today].push(key);
       state.totalActivitiesCount += 1;
     }
- // Actualiza la racha únicamente cuando el usuario realiza
-  // una actividad por primera vez durante el día.
+
     if (state.lastActiveDate !== today) {
       const yesterday = new Date();
       yesterday.setDate(yesterday.getDate() - 1);
@@ -109,9 +96,6 @@
   }
 
   /* ---------- Historial de conversación del chatbot ---------- */
-  /* Se guarda en este dispositivo junto con el resto del estado
-     local y puede borrarse en cualquier momento desde el
-     propio chat con el botón "Limpiar conversación". */
 
   function getChatHistory() {
     try {
@@ -139,7 +123,7 @@
      el chatbot registra una actividad, sin acoplar ambos módulos. */
 
   const listeners = {};
-// Registra funciones que serán notificadas cuando ocurra un evento.
+
   function on(eventName, callback) {
     if (!listeners[eventName]) listeners[eventName] = [];
     listeners[eventName].push(callback);
@@ -307,14 +291,14 @@
 
   function build(){
     const launcher=document.createElement('div');launcher.className='chat-launcher';launcher.innerHTML=`<span class="chat-launcher__hint">¿Necesitas hablar?</span><button class="chat-launcher__btn" id="chatLauncherBtn" aria-label="Abrir chat"><span class="chat-launcher__dot"></span><span class="chat-launcher__icon chat-launcher__icon--chat">Chat</span><span class="chat-launcher__icon chat-launcher__icon--close">Cerrar</span></button>`;
-    const win=document.createElement('div');win.className='chat-window';win.id='chatWindow';win.innerHTML=`<div class="chat-window__header"><div class="chat-window__avatar"><img src="imagenes/Mimo_2D_cabeza.svg" alt="Mimo"></div><div class="chat-window__identity"><p class="chat-window__name">Mimo</p><p class="chat-window__status">Aquí para escucharte</p></div><div class="chat-window__actions"><button id="chatClearBtn" title="Limpiar conversación" aria-label="Limpiar conversación">Limpiar</button><button id="chatCloseBtn" title="Cerrar" aria-label="Cerrar">Cerrar</button></div></div><p class="chat-window__disclaimer">Asistente con respuestas de acompañamiento predeterminadas. No reemplaza la atención profesional.</p><div class="chat-window__body" id="chatBody" aria-live="polite"></div><div class="chat-quick" id="chatQuick"></div><form class="chat-window__footer" id="chatForm"><textarea class="chat-window__input" id="chatInput" rows="1" placeholder="Escribe cómo te sientes..."></textarea><button class="chat-window__send" id="chatSendBtn">Enviar</button></form>`;
+    const win=document.createElement('div');win.className='chat-window';win.id='chatWindow';win.innerHTML=`<div class="chat-window__header"><div class="chat-window__avatar"><img src="imagenes/Logo mente sana.jpeg" alt="Logotipo de Mente Sana"></div><div class="chat-window__identity"><p class="chat-window__name">Mimo</p><p class="chat-window__status">Aquí para escucharte</p></div><div class="chat-window__actions"><button id="chatClearBtn" title="Limpiar conversación" aria-label="Limpiar conversación">Limpiar</button><button id="chatCloseBtn" title="Cerrar" aria-label="Cerrar">Cerrar</button></div></div><p class="chat-window__disclaimer">Asistente con respuestas de acompañamiento predeterminadas. No reemplaza la atención profesional.</p><div class="chat-window__body" id="chatBody" aria-live="polite"></div><div class="chat-quick" id="chatQuick"></div><form class="chat-window__footer" id="chatForm"><label class="sr-only" for="chatInput">Mensaje para Mimo</label><textarea class="chat-window__input" id="chatInput" rows="1" placeholder="Escribe cómo te sientes..." aria-label="Mensaje para Mimo"></textarea><button class="chat-window__send" id="chatSendBtn">Enviar</button></form>`;
     document.body.append(win,launcher);quick.forEach(([label,text])=>{const b=document.createElement('button');b.className='chat-quick__btn';b.textContent=label;b.onclick=()=>send(text);win.querySelector('#chatQuick').appendChild(b)});return{launcher,win};
   }
   const {launcher,win}=build(),body=document.getElementById('chatBody'),input=document.getElementById('chatInput'),form=document.getElementById('chatForm');let history=Storage.getChatHistory();
   function time(){return new Date().toLocaleTimeString('es',{hour:'2-digit',minute:'2-digit'})}
-  function append(role,text){const w=document.createElement('div');w.className='msg '+(role==='user'?'msg--user':'msg--bot');w.innerHTML=`${role==='user'?'':'<div class="msg__avatar"><img src="imagenes/Mimo_2D_cabeza.svg" alt="Mimo"></div>'}<div><div class="msg__bubble"></div><span class="msg__time">${time()}</span></div>`;w.querySelector('.msg__bubble').textContent=text;body.appendChild(w);body.scrollTop=body.scrollHeight}
+  function append(role,text){const w=document.createElement('div');w.className='msg '+(role==='user'?'msg--user':'msg--bot');w.innerHTML=`${role==='user'?'':'<div class="msg__avatar"><img src="imagenes/Logo mente sana.jpeg" alt="Logotipo de Mente Sana"></div>'}<div><div class="msg__bubble"></div><span class="msg__time">${time()}</span></div>`;w.querySelector('.msg__bubble').textContent=text;body.appendChild(w);body.scrollTop=body.scrollHeight}
   function remember(role,content){history.push({role,content});history=history.slice(-30);Storage.saveChatHistory(history)}
-  function choose(list){return list[Math.floor(Math.random()*list.length)]} // Selecciona aleatoriamente una respuesta para evitar repeticiones exactas y dar sensación de conversación más natural.
+  function choose(list){return list[Math.floor(Math.random()*list.length)]}
   function classify(text){return intents.find(i=>i.test.test(text))||generic}
   function send(text){const value=(text||'').trim();if(!value)return;append('user',value);remember('user',value);input.value='';setTimeout(()=>{
     let reply;if(CRISIS.test(value)){reply='Siento mucho que estés pasando por algo tan intenso. Tu seguridad es lo más importante. Contacta ahora a emergencias de tu zona o a una persona de confianza y no te quedes a solas. ¿Estás en un lugar seguro?';lastIntent=generic}
@@ -329,4 +313,61 @@
   document.getElementById('chatClearBtn').onclick=()=>{if(confirm('¿Borrar la conversación?')){Storage.clearChatHistory();history=[];body.innerHTML='';append('assistant',WELCOME)}};
   form.onsubmit=e=>{e.preventDefault();send(input.value)};input.onkeydown=e=>{if(e.key==='Enter'&&!e.shiftKey){e.preventDefault();send(input.value)}};
   setTimeout(()=>launcher.classList.add('is-ready'),700);
+})();
+
+
+/* ---------- Accesibilidad + selector de idioma ---------- */
+(function () {
+  'use strict';
+  const status = document.getElementById('srStatus');
+  const navToggle = document.getElementById('navToggle');
+  const navLinks = document.getElementById('navLinks');
+  const select = document.getElementById('languageSelect');
+  if (navToggle && navLinks) {
+    navToggle.addEventListener('click', () => {
+      const expanded = navToggle.getAttribute('aria-expanded') === 'true';
+      navToggle.setAttribute('aria-expanded', String(!expanded));
+      navToggle.setAttribute('aria-label', expanded ? 'Abrir menú' : 'Cerrar menú');
+    });
+  }
+  function announce(message) {
+    if (!status) return;
+    status.textContent = '';
+    window.setTimeout(() => { status.textContent = message; }, 50);
+  }
+  document.querySelectorAll('.module').forEach(module => {
+    module.addEventListener('focusin', () => {
+      const heading = module.querySelector('h1, h2');
+      if (heading && !heading.id) heading.id = module.id + '-heading';
+    });
+  });
+  document.querySelectorAll('.nav__link').forEach(link => {
+    link.addEventListener('click', () => announce('Sección: ' + link.textContent.trim()));
+  });
+  document.addEventListener('click', event => {
+    if (event.target.closest('#emergencyForm button')) announce('Contacto de confianza guardado.');
+    if (event.target.closest('#wallForm button')) announce('Publicación añadida al muro de la comunidad.');
+  });
+  if (select) {
+    select.addEventListener('change', function () {
+      const lang = this.value;
+      if (lang === 'es') {
+        const selectGoogle = document.querySelector('.goog-te-combo');
+        if (selectGoogle) { selectGoogle.value = 'es'; selectGoogle.dispatchEvent(new Event('change')); }
+        document.documentElement.lang = 'es';
+        announce('Idioma cambiado a español.');
+        return;
+      }
+      const selectGoogle = document.querySelector('.goog-te-combo');
+      if (selectGoogle) {
+        selectGoogle.value = lang;
+        selectGoogle.dispatchEvent(new Event('change'));
+        document.documentElement.lang = lang;
+        this.setAttribute('aria-label', 'Seleccionar idioma');
+        announce('Idioma cambiado.');
+      } else {
+        announce('El traductor se está cargando. Intenta nuevamente en unos segundos.');
+      }
+    });
+  }
 })();
